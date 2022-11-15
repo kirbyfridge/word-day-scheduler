@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- HEAD -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,63 +19,151 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap" 
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
+<!-- BODY -->
   <body>
-    <header class="p-5 mb-4">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+
+<!-- HEADER -->
+<!-- Contains title + description of the page -->
+    <header class="jumbotron py-3">
+      <h1 class="display-3 d-flex justify-content-center">Work Day Scheduler</h1>
+      <p class="lead d-flex justify-content-center">A simple calendar app for scheduling your work day</p>
     </header>
-    <div class="container-fluid px-5">
-      <!-- Use class for "past", "present", and "future" to apply styles to the
-        time-block divs accordingly. The javascript will need to do this by
-        adding/removing these classes on each div by comparing the hour in the
-        id to the current hour. The html provided below is meant to be an example
-        demonstrating how the css provided can be leveraged to create the
-        desired layout and colors. The html below should be removed or updated
-        in the finished product. Remember to delete this comment once the
-        code is implemented.
-        -->
 
-      <!-- Example of a past time block. The "past" class adds a gray background color. -->
-      <div id="hour-9" class="row time-block past">
-        <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-          <i class="fas fa-save" aria-hidden="true"></i>
-        </button>
-      </div>
+<!-- Container which contains all main contents -->
+    <main class="container mb-4">
+        <section class="row">
+<!-- Displays current date + time -->
+            <div class="date col-12">
+                <p id="rightNow" class="lead"></p>
+            </div>
+        </section>
 
-      <!-- Example of a present time block. The "present" class adds a red background color. -->
-      <div id="hour-10" class="row time-block present">
-        <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
-        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-          <i class="fas fa-save" aria-hidden="true"></i>
-        </button>
-      </div>
+<!-- Schedule with time, time blocks, & save button -->
+        <section id="9" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                9am
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="9">
+                <textarea class="input 9"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-9">
+                <button class="9"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
 
-      <!-- Example of a future time block. The "future" class adds a green background color. -->
-      <div id="hour-11" class="row time-block future">
-        <div class="col-2 col-md-1 hour text-center py-3">11AM</div>
-        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-          <i class="fas fa-save" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
+        <section id="10" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                10am
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="10">
+                <textarea class="input 10"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-10">
+                <button class="10"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
 
+        <section id="11" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                11am
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="11">
+                <textarea class="input 11"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-11">
+                <button class="11"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
+
+        <section id="12" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                12pm
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="12">
+                <textarea class="input 12"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-12">
+                <button class="12"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
+
+        <section id="13" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                1pm
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="13">
+                <textarea class="input 13"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-13">
+                <button class="13"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
+
+        <section id="14" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                2pm
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="14">
+                <textarea class="input 14"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-14">
+                <button class="14"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
+
+        <section id="15" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                3pm
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="15">
+                <textarea class="input 15"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-15">
+                <button class="15"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
+
+        <section id="16" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                4pm
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="16">
+                <textarea class="input 16"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-16">
+                <button class="16"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
+
+        <section id="17" class="row">
+            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                5pm
+            </div>
+            <div class="time-block col-xs-8 col-sm-8 col-md-8 col-lg-10" id="17">
+                <textarea class="input 17"></textarea>
+            </div>
+            <div class="saveBtn col-xs-2 col-sm-2 col-md-2 col-lg-1" id="btn-17">
+                <button class="17"><i class="fas fa-save"></i></button>
+            </div>
+        </section>
+    </main>
+
+<!-- FOOTER -->
+        <footer class="d-flex justify-content-center m-4">© 2022</footer>
+</body>
+
+<!-- Script Source links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
     crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-  </body>
 </html>
